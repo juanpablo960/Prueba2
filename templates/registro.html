@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 600px;
+            background-color: #b1a7a7;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            border: none;
+            color: rgb(241, 245, 245);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            position: absolute;
+        }
+
+        .btn1 {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .btn2 {
+            
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px; /* Ajusta el tamaño según tus necesidades */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Logotipo -->
+    <img src="{{ url_for('static', filename='imagenes/logo.jpg') }}" alt="Logotipo" class="logo">
+
+    <!-- Botón de Atrás -->
+    <button class="btn btn1" onclick="window.location.href = '/';">Atrás</button>
+    
+    <!-- Campos de registro -->
+    <h2>Registro</h2>
+    <form action="/submit_registro" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="direccion">Dirección:</label><br>
+        <input type="text" id="direccion" name="direccion"><br>
+
+        <label for="telefono">Teléfono:</label><br>
+        <input type="text" id="telefono" name="telefono"><br>
+
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        
+        <!-- Botón de Enviar -->
+        <button type="submit" class="btn btn2">Enviar</button>
+    </form>
+</div>
+
+</body>
+</html>
